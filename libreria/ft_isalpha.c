@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:21:41 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/20 18:54:22 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:56:33 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	ft_isalpha(int c)
 {
-	int	prueba;
-
-	prueba = 0;
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
