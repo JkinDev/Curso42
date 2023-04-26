@@ -6,12 +6,12 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:40:35 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/26 10:54:47 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/04/26 10:56:55 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*Copies n characters from src to dest, handling overlappin memory correctly.
-Memmove is a safer approach que memcpy*/
+Memmove is a safer approach than memcpy*/
 
 #include "libft.h"
 
