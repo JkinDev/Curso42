@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 17:21:10 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/21 18:36:37 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/04 11:59:30 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/04 12:51:11 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Size-bounded string copy*/
+/*This function applies the function f to each character in the string s,
+whitout creating a new string.*/
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+// void	to_lowcase_void(unsigned int i, char *c)
+// {
+// 	if (*c >= 65 && *c <= 90)
+// 		*c += 32;
+// }
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	if (size != 0)
+	while (s[i] != '\0')
 	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		f(i, &s[i]);
+		i++;
 	}
-	return (ft_strlen(src));
 }
 
 // int	main(void)
 // {
-// 	char src[50] = "Hola que tal";
-// 	char dst[50] = "Hasta luego";
-
-// 	printf("%zu", ft_strlcpy(dst, src, 4));
-// 	return (0);
+// 	char    original[] = "HOLA MUNDO";
+//     ft_striteri(original, to_lowcase_void);
+//     printf("%s", original);
+//     return (0);
 // }

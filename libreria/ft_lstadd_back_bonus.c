@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 17:21:44 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/21 11:17:40 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/08 20:27:24 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/08 20:29:35 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Test a character to see if it´s alphanumeric*/
+/*Add a new node in the end of 'lst'*/
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) || (c >= '0'
-			&& c <= '9'))
-		return (1);
-	return (0);
+	t_list	*lastadd;
+
+	if (*lst)
+	{
+		lastadd = ft_lastlass(*lst);
+		lastadd->next = new;
+	}
+	else
+		*lst = new;
 }
-
-// int	main(void)
-// {
-// 	int	var1;
-
-// 	var1 = '.';
-// 	printf("%i", ft_isalnum(var1));
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:40:35 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/26 10:56:55 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:12:23 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	if (dest < src)
 	{
-		while (i < n)
-		{
-			*pointer_to_dest = *pointer_to_src;
-			i++;
-			pointer_to_dest++;
-			pointer_to_src++;
-		}
+		ft_memcpy(dest, src, n);
 	}
 	else
 	{

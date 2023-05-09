@@ -6,9 +6,11 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:47:02 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/20 09:55:32 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:57:01 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*Convert ASCII string to integer*/
 
 #include "libft.h"
 

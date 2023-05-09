@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 17:21:10 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/21 18:36:37 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/04/28 11:52:47 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/03 15:32:21 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Size-bounded string copy*/
+/*Trim beginning and end of string with specified substring*/
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	int		i;
+	int		j;
+	char	*result;
 
 	i = 0;
-	if (size != 0)
-	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	return (ft_strlen(src));
+	j = ft_strlen(s1) - 1;
+	if (!set || !s1)
+		return (NULL);
+	while (s1[i] != '\0' && ft_strchr(set, s1[i]))
+		i++;
+	while (j >= 0 && ft_strchr(set, s1[j]))
+		j--;
+	result = ft_substr(s1, i, j - i + 1);
+	return (result);
 }
 
 // int	main(void)
 // {
-// 	char src[50] = "Hola que tal";
-// 	char dst[50] = "Hasta luego";
+// 	char	*s1 = "sacos";
+// 	char	*set = "s";
 
-// 	printf("%zu", ft_strlcpy(dst, src, 4));
-// 	return (0);
+// 	printf("%s", ft_strtrim(s1, set));
+// 	return(0);
 // }

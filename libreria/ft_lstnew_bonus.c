@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 17:21:44 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/21 11:17:40 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/05 16:22:19 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/05 16:48:09 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Test a character to see if it´s alphanumeric*/
+/*Create a node with malloc, init variable "content" with content and the
+variable next with null*/
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) || (c >= '0'
-			&& c <= '9'))
-		return (1);
-	return (0);
+	t_list	*i;
+
+	i = malloc(sizeof(t_list));
+	if (!i)
+		return (NULL);
+	i->content = content;
+	i->next = NULL;
+	return (i);
 }
-
-// int	main(void)
-// {
-// 	int	var1;
-
-// 	var1 = '.';
-// 	printf("%i", ft_isalnum(var1));
-// 	return (0);
-// }

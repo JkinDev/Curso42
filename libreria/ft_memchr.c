@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:55:29 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/26 12:46:19 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:07:01 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*str;
 
 	str = (unsigned char *)s;
-
 	i = 0;
 	while (i < n)
 	{

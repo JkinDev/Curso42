@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 17:21:44 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/21 11:17:40 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/04 20:26:26 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/05 16:05:44 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Test a character to see if it´s alphanumeric*/
+/*Send to a number n to specific file descriptor*/
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) || (c >= '0'
-			&& c <= '9'))
-		return (1);
-	return (0);
+	long	nbr;
+
+	nbr = n;
+	if (nbr < 0)
+	{
+		write(fd, "-", 1);
+		nbr *= -1;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		nbr %= 10;
+	}
+	nbr += '0';
+	write(fd, &nbr, 1);
 }
-
-// int	main(void)
-// {
-// 	int	var1;
-
-// 	var1 = '.';
-// 	printf("%i", ft_isalnum(var1));
-// 	return (0);
-// }

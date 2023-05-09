@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 17:21:44 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/21 11:17:40 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/08 20:09:08 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/08 20:18:39 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Test a character to see if it´s alphanumeric*/
+/*Add a begining to node "new" of list "lst"*/
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) || (c >= '0'
-			&& c <= '9'))
-		return (1);
-	return (0);
+	if (!new || !lst)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
-
-// int	main(void)
-// {
-// 	int	var1;
-
-// 	var1 = '.';
-// 	printf("%i", ft_isalnum(var1));
-// 	return (0);
-// }

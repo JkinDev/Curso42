@@ -6,9 +6,11 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:46:38 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:15 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/02 19:28:09 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*Size-bounded string concatenation*/
 
 #include "libft.h"
 
@@ -34,3 +36,12 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[sizedest + i] = '\0';
 	return (ret);
 }
+
+// int main()
+// {
+// 	char str1[] = "Holabuenas tardes";
+// 	char str2[] = "Adios buenas noches";
+
+// 	printf("%zu", ft_strlcat(str1, str2, 15));
+// 	return(0);
+// }
