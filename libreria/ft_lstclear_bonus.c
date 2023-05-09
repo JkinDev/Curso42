@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstclear_bonusc                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 20:27:24 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/09 15:26:38 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/09 12:39:20 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/09 15:24:24 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Add a new node in the end of 'lst'*/
+/*Remov*/
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*lastadd;
+	t_list	*tmp;
 
-	if (*lst)
+	while (*lst)
 	{
-		lastadd = ft_lstlast(*lst);
-		lastadd->next = new;
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = tmp;
 	}
-	else
-		*lst = new;
 }

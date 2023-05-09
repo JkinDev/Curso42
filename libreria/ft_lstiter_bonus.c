@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 20:27:24 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/09 15:26:38 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/09 14:46:16 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/09 14:50:58 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Add a new node in the end of 'lst'*/
+/*Iterate the list 'lst and apply the function 'f' on the content of each node*/
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*lastadd;
-
-	if (*lst)
+	while (lst)
 	{
-		lastadd = ft_lstlast(*lst);
-		lastadd->next = new;
+		f(lst->content);
+		lst = lst->next;
 	}
-	else
-		*lst = new;
 }
