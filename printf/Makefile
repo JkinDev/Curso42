@@ -8,8 +8,8 @@ RM = rm -f
 
 ARS = ar rcs
 
-SRC = ft_printf_char.c\
-	ft_printf_int.c
+SRC = \
+
 
 OBJS = $(SRCS:.c=.o)
 

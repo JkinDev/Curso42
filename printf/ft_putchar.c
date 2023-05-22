@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 19:14:59 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/22 22:24:44 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/22 22:05:02 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/22 22:08:01 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-int	ft_printf(char const *str, ...);
-int	ft_putchar(int c);
-int	ft_writesimbol(void);
-int	ft_putstr(char *str);
-
-#endif
+int	ft_putchar(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}

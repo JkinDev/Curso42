@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 17:09:01 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/12 11:47:48 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/22 22:22:04 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/22 22:31:18 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**/
-
 #include "ft_printf.h"
 
-void	ft_printf_int(int nb, int *i)
+int	ft_putstr(char *str)
 {
-	long long	nbr;
+	int	i;
 
-	nbr = (long long)nb;
-	if (nbr < 0)
+	i = 0;
+	if (!str)
 	{
-		ft_printf_char('-', i);
-		nbr *= -1;
+		write(1, "(null)", 6);
+		return (6);
 	}
-	if (nbr >= 10)
+	while (str[i])
 	{
-		ft_printf_int(nbr / 10, i);
-		nbr %= 10;
+		write(1, &str[i], 1);
+		i++;
 	}
-	ft_printf_char(nbr + '0', i);
+	return (i);
 }
 
-int main()
-{
-	int i = 0;
-	int num = 12345;
-
-	ft_printf_int(num, &i);
-}
+// int	main(void)
+// {
+// 	ft_putstr(NULL);
+// }
