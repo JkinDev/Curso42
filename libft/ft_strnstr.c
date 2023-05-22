@@ -6,11 +6,11 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 10:36:45 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/09 16:09:39 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/12 11:28:28 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Locate a substring in a string*/
+/*Locate a  substring in a string*/
 
 #include "libft.h"
 

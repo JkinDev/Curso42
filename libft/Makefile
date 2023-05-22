@@ -70,7 +70,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BOBJ)
 
 re: fclean all
 
