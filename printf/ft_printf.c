@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:27:22 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/22 19:30:55 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:34:48 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int ft_controler(va_list arg, char type)
 
 int	ft_printf(char const *str, ...)
 {
+	uhiuhuh
 
 }
