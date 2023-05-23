@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 19:14:59 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/23 11:30:00 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/05/23 11:46:34 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/05/23 12:04:39 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-
-int	ft_printf(char const *str, ...);
-int	ft_putchar(int c);
-int	ft_writesimbol(void);
-int	ft_putstr(char *str);
-int	ft_putnbr(int n);
-int	ft_putunbr(unsigned int n);
-
-#endif
+int main()
+{
+	ft_printf("%i", 2147483649);
+	printf("%i", 2147483649);
+}
