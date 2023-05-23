@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:27:22 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/23 12:08:42 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:16:54 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,3 @@ int	ft_printf(char const *str, ...)
 	va_end(args);
 	return (total);
 }
-
-testando
