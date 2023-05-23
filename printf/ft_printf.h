@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:14:59 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/23 11:30:00 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/23 19:30:38 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ int	ft_writesimbol(void);
 int	ft_putstr(char *str);
 int	ft_putnbr(int n);
 int	ft_putunbr(unsigned int n);
+int	ft_putstr(char *str);
+int	ft_printhex(unsigned int n, char type);
+int	ft_putptr(unsigned long long n);
 
 #endif

@@ -8,10 +8,15 @@ RM = rm -f
 
 ARS = ar rcs
 
-SRC = \
+SRC = ft_printf.c\
+	ft_putchar.c\
+	ft_putnbr.c\
+	ft_putstr.c\
+	ft_writesimbol.c\
+	ft_printhex.c
 
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:27:22 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/23 16:17:05 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:04:15 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	ft_controler(va_list args, char type)
 		contador += ft_putnbr(va_arg(args, int));
 	else if (type == 'u')
 		contador += ft_putunbr(va_arg(args, unsigned int));
+	else if (type == 'p')
+		contador += ft_putptr(va_arg(args, unsigned long long));
+	else if (type == 'x' || type == 'X')
+		contador += ft_printhex(va_arg(args, unsigned int), type);
 	return (contador);
 }
 
@@ -53,3 +57,15 @@ int	ft_printf(char const *str, ...)
 	va_end(args);
 	return (total);
 }
+
+// int	main(void)
+// {
+// 	int	x;
+// 	int	*p;
+
+// 	x = 10;
+// 	p = &x;
+// 	ft_printf(" %p %p \n", 184, 18);
+// 	printf(" %p %p \n", (void *)-184, (void *)184);
+// 	printf(" Hola que tal %% %d", -432);
+// }
