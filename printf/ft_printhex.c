@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 17:15:04 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/23 19:19:21 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:56:12 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ int	ft_printhex(unsigned int n, char type)
 	return (count_nhex(n));
 }
 
-// void recursiv_ptr(unsigned long long nbr, char *base)
-// {
-// 	if (nbr > 15)
-// 	{
-// 		recursiv_ptr(nbr / 16, base);
-// 		nbr %= 16;
-// 	}
-// 	write(1, &base[nbr], 1);
-// }
+void	recursiv_ptr(unsigned long long nbr, char *base)
+{
+	if (nbr > 15)
+	{
+		recursiv_ptr(nbr / 16, base);
+		nbr %= 16;
+	}
+	write(1, &base[nbr], 1);
+}
 
 int	ft_putptr(unsigned long long n)
 {
@@ -67,6 +67,6 @@ int	ft_putptr(unsigned long long n)
 
 	base = "0123456789abcdef";
 	write(1, "0x", 2);
-	ft_printhex(n, *base);
+	recursiv_ptr(n, base);
 	return (count_nhex(n) + 2);
 }

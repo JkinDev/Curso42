@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:27:22 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/05/23 20:04:15 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:46:43 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int	ft_printf(char const *str, ...)
 
 // 	x = 10;
 // 	p = &x;
-// 	ft_printf(" %p %p \n", 184, 18);
+// 	ft_printf(" %i %d \n", 184, 18);
 // 	printf(" %p %p \n", (void *)-184, (void *)184);
-// 	printf(" Hola que tal %% %d", -432);
 // }
