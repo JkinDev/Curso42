@@ -1,2 +1,2 @@
 # Course 42
-Projects realized during the course 42 Malaga
+Projects realized during the course 42 Málaga
