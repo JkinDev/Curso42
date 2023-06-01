@@ -6,7 +6,7 @@
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 18:36:07 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/06/01 12:00:03 by jrus-gar         ###   ########.fr       */
+/*   Updated: 2023/06/01 19:37:50 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*upgrade_stack(char *stack_lines)
 {
 	char	*remaining_lines;
 	char	*rest_of_stack;
-	int	i;
+	int		i;
 
 	i = 0;
 	rest_of_stack = ft_strchr(stack_lines, '\n');
@@ -86,6 +86,33 @@ char	*upgrade_stack(char *stack_lines)
 		rest_of_stack++;
 	}
 	remaining_lines[i] = '\0';
-	free (stack_lines);
+	free(stack_lines);
 	return (remaining_lines);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*stack_lines;
+	char		temp[BUFFER_SIZE + 1];
+	char		*line;
+	ssize_t		btread;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	btread = 1;
+	while (btread > 0)
+	{
+		btread = read(fd, temp, BUFFER_SIZE);
+		if (btread < 0)
+			return (free(stack_lines), stack_lines = NULL, NULL);
+		temp[btread] = '\0';
+		stack_lines = ft_join(stack_lines, temp);
+		if (!stack_lines)
+			return (NULL);
+		if (ft_strchr(stack_lines, '\n'))
+			break ;
+	}
+	line = get_line(stack_lines);
+	stack_lines = upgrade_stack(stack_lines);
+	return (line);
 }
