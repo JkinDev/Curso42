@@ -1,4 +1,4 @@
-Consiste en crear una función que emule el comportamiento de la función printf de la biblioteca estándar de C. Esta función deberá ser capaz de manejar una serie de especificadores de formato, como "%s", "%d", "%i", "%x", "%X", entre otros.
+Este proyecto consiste en crear una función que emule el comportamiento de la función printf de la biblioteca estándar de C. Esta función deberá ser capaz de manejar una serie de especificadores de formato, como "%s", "%d", "%i", "%x", "%X", entre otros.
 
 Especificadores de formato La función ft_printf es capaz de manejar los siguientes especificadores de formato:
 
