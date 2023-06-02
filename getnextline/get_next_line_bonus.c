@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrus-gar <jrus-gar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 18:36:07 by jrus-gar          #+#    #+#             */
-/*   Updated: 2023/06/02 10:40:44 by jrus-gar         ###   ########.fr       */
+/*   Created: 2023/06/02 10:49:25 by jrus-gar          #+#    #+#             */
+/*   Updated: 2023/06/02 11:09:01 by jrus-gar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 /*Se encarga de concatenar dos cadenas de texto*/
 
@@ -92,7 +92,7 @@ char	*upgrade_stack(char *stack_lines)
 
 char	*get_next_line(int fd)
 {
-	static char	*stack_lines;
+	static char	*stack_lines[FD_MAX];
 	char		temp[BUFFER_SIZE + 1];
 	char		*line;
 	ssize_t		btread;
@@ -104,15 +104,15 @@ char	*get_next_line(int fd)
 	{
 		btread = read(fd, temp, BUFFER_SIZE);
 		if (btread < 0)
-			return (free(stack_lines), stack_lines = NULL, NULL);
+			return (free(stack_lines[fd]), stack_lines[fd] = NULL, NULL);
 		temp[btread] = '\0';
-		stack_lines = join_lines(stack_lines, temp);
-		if (!stack_lines)
+		stack_lines[fd] = join_lines(stack_lines[fd], temp);
+		if (!stack_lines[fd])
 			return (NULL);
-		if (ft_strchr(stack_lines, '\n'))
+		if (ft_strchr(stack_lines[fd], '\n'))
 			break ;
 	}
-	line = get_line(stack_lines);
-	stack_lines = upgrade_stack(stack_lines);
+	line = get_line(stack_lines[fd]);
+	stack_lines[fd] = upgrade_stack(stack_lines[fd]);
 	return (line);
 }
