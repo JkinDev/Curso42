@@ -1,0 +1,3 @@
+`get_next_line` es una función en C diseñada para leer y devolver la siguiente línea disponible de un archivo o entrada de datos. Esta función se utiliza comúnmente en aplicaciones que trabajan con archivos de texto o flujos de entrada, como editores de texto, procesadores de texto y aplicaciones de análisis de datos.
+
+El propósito de `get_next_line` es proporcionar una forma fácil de leer una línea de texto de un archivo o entrada de datos de manera eficiente. En lugar de leer todo el archivo de una sola vez, que podría consumir una gran cantidad de memoria y tiempo de procesamiento, `get_next_line` lee y devuelve una línea a la vez, lo que permite una lectura más rápida y eficiente de archivos grandes.
